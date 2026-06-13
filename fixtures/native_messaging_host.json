@@ -1,0 +1,7 @@
+{
+  "name": "com.example.nativehost",
+  "description": "Example native host",
+  "path": "/Users/Shared/.hidden/nativehost",
+  "type": "stdio",
+  "allowed_origins": ["chrome-extension://*/"]
+}

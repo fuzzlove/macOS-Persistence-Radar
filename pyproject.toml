@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "macos-persistence-radar"
+version = "0.1.0"
+description = "Local-first macOS persistence detection and audit tool."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "macOS Persistence Radar contributors"}]
+dependencies = [
+  "PySide6>=6.6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pyinstaller>=6"]
+
+[project.scripts]
+persistence-radar = "persistence_radar.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["persistence_radar*"]
+
+[tool.setuptools.package-data]
+persistence_radar = ["assets/icons/*.png", "assets/icons/*.icns"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
