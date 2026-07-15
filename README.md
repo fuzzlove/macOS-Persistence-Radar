@@ -1,5 +1,13 @@
 # macOS Persistence Radar
 
+MSAA
+Copyright © 2026 Liquidsky Network Security.
+All Rights Reserved.
+
+This software is proprietary and confidential.
+Unauthorized copying, modification, redistribution, or reverse engineering is prohibited except as expressly permitted by the applicable license agreement.
+
+----------
 macOS Persistence Radar is a local-first defensive audit tool for inventorying, scoring, and explaining macOS persistence mechanisms. It is intended for blue-team, DFIR, and security-audit use.
 
 The scanner is read-only by default. It does not delete, disable, modify, hide, or create persistence items. Watch mode is documented and user-started only.
